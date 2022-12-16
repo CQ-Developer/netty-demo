@@ -1,4 +1,4 @@
-package io.huhu.netty.demo;
+package io.huhu.netty.demo1;
 
 import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelFuture;
@@ -32,4 +32,5 @@ public class HttpHelloWorldServerHandler extends SimpleChannelInboundHandler<Htt
     public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
         ctx.flush();
     }
+
 }
