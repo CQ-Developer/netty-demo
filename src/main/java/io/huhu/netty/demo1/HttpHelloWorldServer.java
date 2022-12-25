@@ -13,6 +13,11 @@ import io.netty.handler.logging.LoggingHandler;
 
 import static io.netty.handler.logging.LogLevel.INFO;
 
+/**
+ * 一个简单的http服务器
+ *
+ * @author chen
+ */
 public class HttpHelloWorldServer {
 
     public static void main(String[] args) throws Exception {
@@ -24,7 +29,7 @@ public class HttpHelloWorldServer {
             serverBootstrap.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
                     .handler(new LoggingHandler(INFO))
-                    .childHandler(new ChannelInitializer<Channel>() {
+                    .childHandler(new ChannelInitializer<>() {
                         @Override
                         protected void initChannel(Channel ch) throws Exception {
                             ChannelPipeline pipeline = ch.pipeline();
