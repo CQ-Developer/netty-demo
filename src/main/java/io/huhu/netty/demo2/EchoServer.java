@@ -25,7 +25,7 @@ public class EchoServer {
             serverBootstrap.group(workerGroup)
                     .channel(NioServerSocketChannel.class)
                     .handler(new LoggingHandler(INFO))
-                    .childHandler(new ChannelInitializer<Channel>() {
+                    .childHandler(new ChannelInitializer<>() {
                         @Override
                         protected void initChannel(Channel ch) throws Exception {
                             ChannelPipeline pipeline = ch.pipeline();
