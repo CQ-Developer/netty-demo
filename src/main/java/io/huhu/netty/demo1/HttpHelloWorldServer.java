@@ -29,7 +29,7 @@ public class HttpHelloWorldServer {
             serverBootstrap.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
                     .handler(new LoggingHandler(INFO))
-                    .childHandler(new ChannelInitializer<>() {
+                    .childHandler(new ChannelInitializer<Channel>() {
                         @Override
                         protected void initChannel(Channel ch) throws Exception {
                             ChannelPipeline pipeline = ch.pipeline();

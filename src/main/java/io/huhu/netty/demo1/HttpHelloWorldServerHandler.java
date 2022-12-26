@@ -17,7 +17,8 @@ public class HttpHelloWorldServerHandler extends SimpleChannelInboundHandler<Htt
 
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, HttpObject msg) throws Exception {
-        if (msg instanceof HttpRequest request) {
+        if (msg instanceof HttpRequest) {
+            HttpRequest request = (HttpRequest) msg;
             DefaultFullHttpResponse response = new DefaultFullHttpResponse(
                     request.protocolVersion(), OK, Unpooled.wrappedBuffer("helloworld".getBytes()));
             response.headers()
